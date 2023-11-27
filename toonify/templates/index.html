@@ -1,54 +1,17 @@
-{% extends "base.html" %}
-{% block content %}
-<form method="POST">
-    {{form.hidden_tag()}}
-    <div class="p-5">
-        <div class="container-fluid">
-            <div class="mb-3">
-                <label class="form-label">Image prompt goes here: </label>
-                {{form.prompt0(class="form-control")}}
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Image prompt goes here: </label>
-                {{form.prompt1(class="form-control")}}
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Image prompt goes here: </label>
-                {{form.prompt2(class="form-control")}}
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Image prompt goes here: </label>
-                {{form.prompt3(class="form-control")}}
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Image prompt goes here: </label>
-                {{form.prompt4(class="form-control")}}
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Image prompt goes here: </label>
-                {{form.prompt5(class="form-control")}}
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Image prompt goes here: </label>
-                {{form.prompt6(class="form-control")}}
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Image prompt goes here: </label>
-                {{form.prompt7(class="form-control")}}
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Image prompt goes here: </label>
-                {{form.prompt8(class="form-control")}}
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Image prompt goes here: </label>
-                {{form.prompt9(class="form-control")}}
-            </div>
-            <div class="mb-3">
-                {{form.submit(class="btn btn-primary")}}
-            </div>
-        </div>
-    </div>
-
-</form>
+{% extends "base.html" %} {% block content %}
+<div class="w-100 p-3 card text-center">
+  <div class="card-body">
+    <!-- Content of your card goes here -->
+    <h5 class="card-title">
+      Turn your words into comics with Toony. Enter 10 prompts and let the magic
+      happen! Unleash your creativity with our easy-to-use web app. Get started
+      now and transform your ideas into visually engaging comics. Create,
+      customize, and publish your unique stories in minutes.
+    </h5>
+    <p class="card-text">#ComicCreator #CreativityUnleashed</p>
+  </div>
+</div>
+<div class="d-grid gap-2 col-6 mx-auto p-3">
+  <a class="text-center" href="{{url_for('begin')}}"><button class="btn btn-success" type="button">Lets Go!!</button></a>
+</div>
 {% endblock %}
