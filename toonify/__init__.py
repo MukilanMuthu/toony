@@ -1,3 +1,4 @@
+import os
 import io
 from PIL import Image
 from flask import Flask, render_template, redirect, url_for
@@ -6,44 +7,55 @@ from toonify.input_form import InputForm
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
+app.config['SECRET_KEY'] = 'secret'
+
+@app.route('/', methods=['POST', 'GET'])
 def index():
     form = InputForm()
     if form.validate_on_submit():
         prompts=[]
-        prompt0 = form.promt0.data
+        prompt0 = form.prompt0.data
         prompts.append(prompt0)
-        prompt1 = form.promt1.data
+        prompt1 = form.prompt1.data
         prompts.append(prompt1)
-        prompt2 = form.promt2.data
+        prompt2 = form.prompt2.data
         prompts.append(prompt2)
-        prompt3 = form.promt3.data
+        prompt3 = form.prompt3.data
         prompts.append(prompt3)
-        prompt4 = form.promt4.data
+        prompt4 = form.prompt4.data
         prompts.append(prompt4)
-        prompt5 = form.promt5.data
+        prompt5 = form.prompt5.data
         prompts.append(prompt5)
-        prompt6 = form.promt6.data
+        prompt6 = form.prompt6.data
         prompts.append(prompt6)
-        prompt7 = form.promt7.data
+        prompt7 = form.prompt7.data
         prompts.append(prompt7)
-        prompt8 = form.promt8.data
+        prompt8 = form.prompt8.data
         prompts.append(prompt8)
-        prompt9 = form.promt9.data
+        prompt9 = form.prompt9.data
         prompts.append(prompt9)
+
+        print(prompts)
 
         return redirect(url_for('result', prompts = prompts))
 
-    return render_template('index.html')
+    return render_template('index.html', form=form)
 
-@app.route('/result')
+@app.route('/result/<prompts>')
 def result(prompts):
-    image_collection = []
-    for prompt in prompts:
+    current_directory = os.getcwd()
+    child = 'toonify'
+    child_directory = os.path.join(current_directory, child)
+    TEMP_DIR = os.path.join(child_directory, 'static')
+    os.makedirs(TEMP_DIR, exist_ok=True)
+    prompt_list = prompts.split(',')
+    for i, prompt in enumerate(prompt_list):
+        image_path = os.path.join(TEMP_DIR, f'image_{i}.png')
         raw_image = query({
 	    "inputs": prompt,
         })
-        encoded_image = base64.b64encode(raw_image).decode('utf-8')
-        image_collection.append(encoded_image)
-
-    return render_template('result.html', image_collection = image_collection)
+        image = Image.open(io.BytesIO(raw_image))
+        if os.path.exists(image_path):
+            os.remove(image_path)
+        image.save(image_path)
+    return render_template('result.html')

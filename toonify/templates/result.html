@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container text-center">
+        {% for i in range(0, 10, 2)%}
+        <div class="row">
+            <div class="col">
+                {% set image_filename = 'image_' + i|string + '.png' %}
+                {% set image_path = url_for('static', filename=image_filename) %}
+                <img src="{{ image_path }}" alt="comic pannel {{i+1}}">
+            </div>
+            <div class="col">
+                {% set image_filename = 'image_' + (i+1)|string + '.png' %}
+                {% set image_path = url_for('static', filename=image_filename) %}
+                <img src="{{ image_path }}"  alt="comic pannel {{i+2}}">
+            </div>
+        </div>
+        {% endfor %}
+{% endblock %}
