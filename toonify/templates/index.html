@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block content %}
 <div class="w-100 p-3 card text-center">
   <div class="card-body">
-    <!-- Content of your card goes here -->
+
     <h5 class="card-title">
       Turn your words into comics with Toony. Enter 10 prompts and let the magic
       happen! Unleash your creativity with our easy-to-use web app. Get started
@@ -12,6 +12,6 @@
   </div>
 </div>
 <div class="d-grid gap-2 col-6 mx-auto p-3">
-  <a class="text-center" href="{{url_for('begin')}}"><button class="btn btn-success" type="button">Lets Go!!</button></a>
+  <a class="text-center" href="{{url_for('begin')}}"><button class="btn btn-success" type="button" style="border: solid;">Lets Go!!</button></a>
 </div>
 {% endblock %}

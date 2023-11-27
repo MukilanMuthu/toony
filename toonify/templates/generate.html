@@ -1,60 +1,137 @@
 {% extends "base.html" %} {% block content %}
 <form method="POST">
   {{form.hidden_tag()}}
-  <div class="container px-4 text-center">
-    <div class="'row gx-5 px-2 py-1" style="display: flex; column-gap: 1rem; background-color: rgba(76, 76, 76, 0.619);">
-      <div class="col" style="background-color: white; border:1px solid black; border-radius: 8px;">
-        <label class="form-label" >Image prompt goes here: </label>
+  <div class="container px-4">
+
+    <div class="'row gx-5 px-2 py-1" style="display: flex; column-gap: 1rem;  justify-content: center; background-color: rgba(76, 76, 76, 0.619);">
+
+      <div class="col px-2" style="background-color: white; border:1px solid black; border-radius: 8px;">
+
+        <label class="form-label" >Prompt for image 1 goes here: </label>
         {{form.prompt0(class="form-control form-control-sm")}}
+
+        <div class="form-check">
+            <label class="form-check-label">Want text box?</label>
+            {{ form.annot0(class="form-check-input") }}
+        </div>
       </div>
-      <div class="col" style="background-color: white; border:1px solid black; border-radius: 8px;">
-        <label class="form-label">Image prompt goes here: </label>
+      
+      <div class="col px-2" style="background-color: white; border:1px solid black; border-radius: 8px;">
+
+        <label class="form-label">Prompt for image 2 goes here: </label>
         {{form.prompt1(class="form-control form-control-sm")}}
+
+        <div class="form-check">
+            <label class="form-check-label">Want text box?</label>
+            {{ form.annot1(class="form-check-input") }}
+        </div>        
       </div>
     </div>
-    <div class="'row gx-5  px-2 py-1" style="display: flex; column-gap: 1rem; background-color: rgba(76, 76, 76, 0.619);">
-      <div class="col" style="background-color: white; border:1px solid black; border-radius: 8px;">
-        <label class="form-label" >Image prompt goes here: </label>
+    
+    <div class="'row gx-5 px-2 py-1" style="display: flex; column-gap: 1rem;  justify-content: center; background-color: rgba(76, 76, 76, 0.619);">
+
+      <div class="col px-2" style="background-color: white; border:1px solid black; border-radius: 8px;">
+
+        <label class="form-label" >Prompt for image 3 goes here:</label>
         {{form.prompt2(class="form-control form-control-sm")}}
+
+        <div class="form-check">
+            <label class="form-check-label">Want text box?</label>
+            {{ form.annot2(class="form-check-input") }}
+        </div>
       </div>
-      <div class="col" style="background-color: white; border:1px solid black; border-radius: 8px;">
-        <label class="form-label">Image prompt goes here: </label>
+      
+      <div class="col px-2" style="background-color: white; border:1px solid black; border-radius: 8px;">
+
+        <label class="form-label">Prompt for image 4 goes here:</label>
         {{form.prompt3(class="form-control form-control-sm")}}
+
+        <div class="form-check">
+            <label class="form-check-label">Want text box?</label>
+            {{ form.annot3(class="form-check-input") }}
+        </div>        
       </div>
     </div>
-    <div class="'row gx-5 px-2 py-1" style="display: flex; column-gap: 1rem; background-color: rgba(76, 76, 76, 0.619);">
-      <div class="col" style="background-color: white; border:1px solid black; border-radius: 8px;">
-        <label class="form-label" >Image prompt goes here: </label>
+    
+    <div class="'row gx-5 px-2 py-1" style="display: flex; column-gap: 1rem;  justify-content: center; background-color: rgba(76, 76, 76, 0.619);">
+
+      <div class="col px-2" style="background-color: white; border:1px solid black; border-radius: 8px;">
+
+        <label class="form-label" >Prompt for image 5 goes here:</label>
         {{form.prompt4(class="form-control form-control-sm")}}
+
+        <div class="form-check">
+            <label class="form-check-label">Want text box?</label>
+            {{ form.annot4(class="form-check-input") }}
+        </div>
       </div>
-      <div class="col" style="background-color: white; border:1px solid black; border-radius: 8px;">
-        <label class="form-label">Image prompt goes here: </label>
+      
+      <div class="col px-2" style="background-color: white; border:1px solid black; border-radius: 8px;">
+
+        <label class="form-label">Prompt for image 6 goes here:</label>
         {{form.prompt5(class="form-control form-control-sm")}}
+
+        <div class="form-check">
+            <label class="form-check-label">Want text box?</label>
+            {{ form.annot5(class="form-check-input") }}
+        </div>        
       </div>
     </div>
-    <div class="'row gx-5 px-2 py-1" style="display: flex; column-gap: 1rem; background-color: rgba(76, 76, 76, 0.619);">
-      <div class="col" style="background-color: white; border:1px solid black; border-radius: 8px;">
-        <label class="form-label" >Image prompt goes here: </label>
+    
+    <div class="'row gx-5 px-2 py-1" style="display: flex; column-gap: 1rem;  justify-content: center; background-color: rgba(76, 76, 76, 0.619);">
+
+      <div class="col px-2" style="background-color: white; border:1px solid black; border-radius: 8px;">
+
+        <label class="form-label" >Prompt for image 7 goes here:</label>
         {{form.prompt6(class="form-control form-control-sm")}}
+
+        <div class="form-check">
+            <label class="form-check-label">Want text box?</label>
+            {{ form.annot6(class="form-check-input") }}
+        </div>
       </div>
-      <div class="col" style="background-color: white; border:1px solid black; border-radius: 8px;">
-        <label class="form-label">Image prompt goes here: </label>
+      
+      <div class="col px-2" style="background-color: white; border:1px solid black; border-radius: 8px;">
+
+        <label class="form-label">Prompt for image 8 goes here:</label>
         {{form.prompt7(class="form-control form-control-sm")}}
+
+        <div class="form-check">
+            <label class="form-check-label">Want text box?</label>
+            {{ form.annot7(class="form-check-input") }}
+        </div>        
       </div>
     </div>
-    <div class="'row gx-5 px-2 py-1" style="display: flex; column-gap: 1rem; background-color: rgba(76, 76, 76, 0.619);">
-      <div class="col" style="background-color: white; border:1px solid black; border-radius: 8px;">
-        <label class="form-label" >Image prompt goes here: </label>
+    
+    <div class="'row gx-5 px-2 py-1" style="display: flex; column-gap: 1rem;  justify-content: center; background-color: rgba(76, 76, 76, 0.619);">
+
+      <div class="col px-2" style="background-color: white; border:1px solid black; border-radius: 8px;">
+
+        <label class="form-label" >Prompt for image 9 goes here:</label>
         {{form.prompt8(class="form-control form-control-sm")}}
+
+        <div class="form-check">
+            <label class="form-check-label">Want text box?</label>
+            {{ form.annot8(class="form-check-input") }}
+        </div>
       </div>
-      <div class="col" style="background-color: white; border:1px solid black; border-radius: 8px;">
-        <label class="form-label">Image prompt goes here: </label>
+      
+      <div class="col px-2" style="background-color: white; border:1px solid black; border-radius: 8px;">
+
+        <label class="form-label">Prompt for image 10 goes here:</label>
         {{form.prompt9(class="form-control form-control-sm")}}
+
+        <div class="form-check">
+            <label class="form-check-label">Want text box?</label>
+            {{ form.annot9(class="form-check-input") }}
+        </div>        
       </div>
     </div>
+    
     <div class="'row gx-5 px-2 py-1" style="display: flex; column-gap: 1rem; background-color: rgba(76, 76, 76, 0.619); justify-content: center;">
-        <div>{{form.submit(class="btn btn-success")}}</div>
+        <div>{{form.submit(class="btn btn-success", style="border: solid;")}}</div>
     </div>
   </div>
 </form>
+
 {% endblock %}

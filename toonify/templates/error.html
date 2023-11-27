@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="w-100 p-3 card text-center">
+    <div class="card-body">
+      <h5 class="card-title">
+        Seems like you ended up in an empty page. We appreciate your creativity but make sure to use the buttons to navigate.
+      </h5>
+      <p class="card-text">#ComicCreator #CreativityUnleashed</p>
+    </div>
+</div>
+<div class="d-grid gap-2 col-6 mx-auto p-3">
+    <a class="text-center" href="{{url_for('index')}}"><button class="btn btn-success" type="button" style="border: solid;">Home</button></a>
+</div>
+<div class="w-100 p-3 card text-center">
+    <form action="/submit_feedback" method="post">
+        <div class="container px-4">
+            <h4>Or, did something unexpected happened? Can you please tell us?</h4>
+ 
+                <div class="px-2" style="background-color: white; border:1px solid black; border-radius: 8px;">
+                    <textarea class="form-control" id="feedback" name="feedback" ></textarea>
+                    
+                </div>
+        </div>
+        <button class="btn btn-primary" type="submit" style="border: solid;">Submit Feedback</button>
+    </div>
+      </form>
+{% endblock %}

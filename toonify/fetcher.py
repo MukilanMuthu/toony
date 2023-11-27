@@ -1,10 +1,16 @@
+import os
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+
+APIKEY = os.getenv("APIKEY")
 
 
 API_URL = "https://xdwvg9no7pefghrn.us-east-1.aws.endpoints.huggingface.cloud"
 headers = {
 	"Accept": "image/png",
-	"Authorization": "Bearer VknySbLLTUjbxXAXCjyfaFIPwUTCeRXbFSOjwRiCxsxFyhbnGjSFalPKrpvvDAaPVzWEevPljilLVDBiTzfIbWFdxOkYJxnOPoHhkkVGzAknaOulWggusSFewzpqsNWM",
+	"Authorization": APIKEY,
 	"Content-Type": "application/json"
 }
 
