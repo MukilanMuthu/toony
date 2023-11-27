@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SECRETKEY = os.getenv("SECRETKEY")
+SECRETKEY = os.getenv(SECRETKEY)
 
 app = Flask(__name__)
 
@@ -126,3 +126,11 @@ def submit_feedback():
 @app.errorhandler(404)
 def error_404(error):
     return render_template('error.html'), 404
+
+@app.errorhandler(403)
+def error_403(error):
+    return render_template('error.html'), 403
+
+@app.errorhandler(500)
+def error_500(error):
+    return render_template('other_error.html'), 500
