@@ -93,22 +93,22 @@ def begin():
 
 @app.route('/result/<prompts>')
 def result(prompts):
-    # current_directory = os.getcwd()
-    # child = 'toonify'
-    # child_directory = os.path.join(current_directory, child)
-    # TEMP_DIR = os.path.join(child_directory, 'static')
-    # os.makedirs(TEMP_DIR, exist_ok=True)
-    # prompt_list = prompts.split(',')
-    # for i, prompt in enumerate(prompt_list):
-    #     image_path = os.path.join(TEMP_DIR, f'image_{i}.png')
-    #     prompt+= "with a speech bubble"
-    #     raw_image = query({
-	#     "inputs": prompt,
-    #     })
-    #     image = Image.open(io.BytesIO(raw_image))
-    #     if os.path.exists(image_path):
-    #         os.remove(image_path)
-    #     image.save(image_path)
+    current_directory = os.getcwd()
+    child = 'toonify'
+    child_directory = os.path.join(current_directory, child)
+    TEMP_DIR = os.path.join(child_directory, 'static')
+    os.makedirs(TEMP_DIR, exist_ok=True)
+    prompt_list = prompts.split(',')
+    for i, prompt in enumerate(prompt_list):
+        image_path = os.path.join(TEMP_DIR, f'image_{i}.png')
+        prompt+= "with a speech bubble"
+        raw_image = query({
+	    "inputs": prompt,
+        })
+        image = Image.open(io.BytesIO(raw_image))
+        if os.path.exists(image_path):
+            os.remove(image_path)
+        image.save(image_path)
     return render_template('result.html')
 
 @app.route('/submit_feedback', methods=['POST'])
