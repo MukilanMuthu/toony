@@ -1,4 +1,4 @@
-# toony
+# Toony
 Comic panel generator assignment project for Dashtoon.
 
 ## Steps involved
