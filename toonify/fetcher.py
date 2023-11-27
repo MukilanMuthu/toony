@@ -2,7 +2,7 @@ import os
 import requests
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv('.env')
 
 APIKEY = os.getenv("APIKEY")
 

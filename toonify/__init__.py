@@ -7,9 +7,9 @@ from toonify.fetcher import query
 from toonify.input_form import InputForm
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv('./.env')
 
-SECRETKEY = os.getenv(SECRETKEY)
+SECRETKEY = os.getenv("SECRETKEY")
 
 app = Flask(__name__)
 
