@@ -1,5 +1,5 @@
 # Toony
-Comic panel generator assignment project for Dashtoon.
+Comic panel generator assignment project.
 
 ## Steps involved
  - The barebones core files were created first to ensure the functionality of the app. This required using Flask and its other packages which are included in the README.md . 
@@ -14,4 +14,4 @@ Comic panel generator assignment project for Dashtoon.
  - Using TailwindCSS instead of Bootstrap for granular control over the design.
 
 ## Update
-== There seems to be an issue with pythonanywhere and the API hosted in AWS thereby making the deployed site obsolete. Please use the Github files locally for evaluation. ==
+==There seems to be an issue with pythonanywhere and the API hosted in AWS thereby making the deployed site obsolete. Please use the Github files locally.==
